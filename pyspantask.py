@@ -489,7 +489,7 @@ if __name__=="__main__":
 
     # Make sure that all parameters are present in the configuration file.
     t = set("""fontname fontname processing_items_file target_items_file responses
-      welcome_text instructions1 allow_sloppy_spelling practice_processing_items
+      welcome_text instructions1a instructions1b allow_sloppy_spelling practice_processing_items
       measure_time_after_trial heed_order pseudo_random_targets practice_levels
       practice_items_per_level practice_correct_response
       practice_incorrect_response practice_summary instructions2 instructions3
@@ -599,7 +599,8 @@ if __name__=="__main__":
   root.attributes('-fullscreen', True)
   main_frame = MainFrame(root,
                          Text(welcome_text, CENTER),
-                         Text(instructions1),
+                         Text(instructions1a),
+                         Text(instructions1b),
                          PracticeProcessingItemsScript(processing_items),
                          Text(instructions2),
                          TestScript(processing_items, target_items,
